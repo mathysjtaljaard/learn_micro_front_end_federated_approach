@@ -13,11 +13,10 @@ function reducer(state, action) {
     }
 }
 
-export const AppContext = React.createContext();
+const AppContext = React.createContext();
 
 export const StoreProvider = ({children}) => {
     const value = React.useReducer(reducer, initialState);
-
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
